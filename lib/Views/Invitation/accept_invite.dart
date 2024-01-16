@@ -24,7 +24,7 @@ class AcceptInvite extends StatelessWidget {
               Navigator.of(context).pop();
             },
             child: const Icon(
-              Icons.arrow_back,
+              Icons.arrow_back_ios,
               color: Color(0xFF00043D),
             ),
           ),

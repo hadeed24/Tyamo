@@ -1,9 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:tyamo/Views/features/deviceInfo/BatteryInfo/BetteryInfo.dart';
+import 'package:tyamo/Views/features/deviceInfo/Device_info.dart';
 
 class ButtonContainer extends StatelessWidget {
-  const ButtonContainer({super.key, required this.txt});
+  const ButtonContainer({super.key, required this.txt, required this.widget});
   final String txt;
+  final Widget widget;
 
   @override
   Widget build(BuildContext context) {
@@ -34,11 +37,19 @@ class ButtonContainer extends StatelessWidget {
                   borderRadius: BorderRadius.circular(10),
                 ),
               ),
-              backgroundColor: MaterialStateProperty.all(const Color(0xFF00043D)),
+              backgroundColor:
+                  MaterialStateProperty.all(const Color(0xFF00043D)),
               elevation:
                   MaterialStateProperty.all(0), // No elevation for the button
             ),
-            onPressed: () {},
+            onPressed: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: (context) => widget,
+                ),
+              );
+            },
             child: Container(
               padding: const EdgeInsets.all(16),
               child: Column(

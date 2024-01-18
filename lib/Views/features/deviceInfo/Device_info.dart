@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:responsive_sizer/responsive_sizer.dart';
+import 'package:tyamo/Views/features/deviceInfo/BatteryInfo/BetteryInfo.dart';
+import 'package:tyamo/Views/features/deviceInfo/UserStatus/UserStatus.dart';
 import 'package:tyamo/Widgets/Common/button_container.dart';
 import 'package:tyamo/Widgets/Common/logo_appbar.dart';
 
@@ -53,8 +55,7 @@ class DeviceInfo extends StatelessWidget {
                         child: Padding(
                           padding: EdgeInsets.only(left: 20),
                           child: ButtonContainer(
-                            txt: "User Status",
-                          ),
+                              txt: "User Status", widget: UserStatus()),
                         ),
                       ),
                       Expanded(
@@ -62,8 +63,7 @@ class DeviceInfo extends StatelessWidget {
                         child: Padding(
                           padding: EdgeInsets.only(left: 20),
                           child: ButtonContainer(
-                            txt: "Battery",
-                          ),
+                              txt: "Battery", widget: BatteryInfo()),
                         ),
                       )
                     ],
@@ -72,9 +72,8 @@ class DeviceInfo extends StatelessWidget {
                 Expanded(
                   child: Padding(
                     padding: EdgeInsets.only(right: 20),
-                    child: ButtonContainer(
-                      txt: "General",
-                    ),
+                    child:
+                        ButtonContainer(txt: "General", widget: BatteryInfo()),
                   ),
                 )
               ],
@@ -88,8 +87,7 @@ class DeviceInfo extends StatelessWidget {
                   child: Padding(
                     padding: EdgeInsets.only(left: 20),
                     child: ButtonContainer(
-                      txt: "Device Specs",
-                    ),
+                        txt: "Device Specs", widget: DeviceInfo()),
                   ),
                 ),
                 Expanded(
@@ -101,8 +99,7 @@ class DeviceInfo extends StatelessWidget {
                         child: Padding(
                           padding: EdgeInsets.only(right: 20),
                           child: ButtonContainer(
-                            txt: "Location",
-                          ),
+                              txt: "Location", widget: BatteryInfo()),
                         ),
                       ),
                       Expanded(
@@ -110,8 +107,7 @@ class DeviceInfo extends StatelessWidget {
                         child: Padding(
                           padding: EdgeInsets.only(right: 20),
                           child: ButtonContainer(
-                            txt: "Orientation",
-                          ),
+                              txt: "Orientation", widget: BatteryInfo()),
                         ),
                       )
                     ],

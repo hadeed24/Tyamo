@@ -2,6 +2,7 @@ import 'package:circular_profile_avatar/circular_profile_avatar.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:tyamo/Views/features/deviceInfo/Device_info.dart';
 import 'package:tyamo/Views/homepage/dashboard_gradient_feature.dart';
 
 class DashBoard extends StatelessWidget {
@@ -23,11 +24,11 @@ class DashBoard extends StatelessWidget {
                 letterSpacing: 2),
           ),
         ),
-        SizedBox(
+        const SizedBox(
           height: 5,
         ),
         Container(
-          padding: EdgeInsets.only(left: 25),
+          padding: const EdgeInsets.only(left: 25),
           alignment: Alignment.centerLeft,
           child: Text(
             "Your Friend",
@@ -35,12 +36,12 @@ class DashBoard extends StatelessWidget {
             style: GoogleFonts.nunito(
                 fontSize: 18,
                 fontWeight: FontWeight.w900,
-                color: Color(0xFF00043D),
+                color: const Color(0xFF00043D),
                 letterSpacing: 2),
           ),
         ),
         Container(
-          padding: EdgeInsets.symmetric(horizontal: 20, vertical: 10),
+          padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 10),
           width: double.infinity,
           child: Card(
             elevation: 7,
@@ -55,7 +56,7 @@ class DashBoard extends StatelessWidget {
                   Row(
                     children: [
                       Container(
-                        padding: EdgeInsets.fromLTRB(25, 25, 25, 0),
+                        padding: const EdgeInsets.fromLTRB(25, 25, 25, 0),
                         child: CircularProfileAvatar(
                           "",
                           radius: 40,
@@ -63,10 +64,10 @@ class DashBoard extends StatelessWidget {
                           backgroundColor: Colors.cyan,
                           elevation: 5,
                           borderWidth: 1,
-                          borderColor: Color(0xFF00043D),
+                          borderColor: const Color(0xFF00043D),
                           cacheImage: true,
                           errorWidget: (context, url, error) {
-                            return Icon(
+                            return const Icon(
                               Icons.face,
                               size: 50,
                             );
@@ -75,7 +76,7 @@ class DashBoard extends StatelessWidget {
                           animateFromOldImageOnUrlChange: true,
                           placeHolder: (context, url) {
                             return Container(
-                              child: Center(
+                              child: const Center(
                                 child: CircularProgressIndicator(),
                               ),
                             );
@@ -91,19 +92,19 @@ class DashBoard extends StatelessWidget {
                             children: [
                               Row(
                                 children: [
-                                  Icon(
+                                  const Icon(
                                     Icons.fiber_manual_record,
                                     color: Colors.grey,
                                     size: 18,
                                   ),
-                                  SizedBox(
+                                  const SizedBox(
                                     width: 10,
                                   ),
                                   Text(
                                     "Abdul Hadeed",
                                     style: GoogleFonts.nunito(
                                         fontSize: 16,
-                                        color: Color(0xFF00043D),
+                                        color: const Color(0xFF00043D),
                                         fontWeight: FontWeight.w800),
                                   ),
                                 ],
@@ -111,12 +112,12 @@ class DashBoard extends StatelessWidget {
                               Row(
                                 crossAxisAlignment: CrossAxisAlignment.start,
                                 children: [
-                                  Icon(
+                                  const Icon(
                                     Icons.location_on,
                                     color: Colors.black,
                                     size: 18,
                                   ),
-                                  SizedBox(
+                                  const SizedBox(
                                     width: 10,
                                   ),
                                   Expanded(
@@ -124,7 +125,7 @@ class DashBoard extends StatelessWidget {
                                       "B-22, Herabad sadar, abdullah mall, Pakistan",
                                       style: GoogleFonts.nunito(
                                           fontSize: 12,
-                                          color: Color(0xFF00043D),
+                                          color: const Color(0xFF00043D),
                                           fontWeight: FontWeight.w800),
                                     ),
                                   ),
@@ -151,7 +152,7 @@ class DashBoard extends StatelessWidget {
                                   "Status",
                                   style: GoogleFonts.nunito(
                                       fontSize: 12,
-                                      color: Color(0xFF00043D),
+                                      color: const Color(0xFF00043D),
                                       fontWeight: FontWeight.w800),
                                 ),
                                 Text(
@@ -168,7 +169,7 @@ class DashBoard extends StatelessWidget {
                             height: 30,
                             width: 1,
                             child: Container(
-                              color: Color(0xFF00043D),
+                              color: const Color(0xFF00043D),
                             ),
                           ),
                           Flexible(
@@ -179,7 +180,7 @@ class DashBoard extends StatelessWidget {
                                   "User Status",
                                   style: GoogleFonts.nunito(
                                       fontSize: 12,
-                                      color: Color(0xFF00043D),
+                                      color: const Color(0xFF00043D),
                                       fontWeight: FontWeight.w800),
                                 ),
                                 Text(
@@ -196,7 +197,7 @@ class DashBoard extends StatelessWidget {
                             height: 30,
                             width: 1,
                             child: Container(
-                              color: Color(0xFF00043D),
+                              color: const Color(0xFF00043D),
                             ),
                           ),
                           Flexible(
@@ -207,7 +208,7 @@ class DashBoard extends StatelessWidget {
                                   "Mood",
                                   style: GoogleFonts.nunito(
                                       fontSize: 12,
-                                      color: Color(0xFF00043D),
+                                      color: const Color(0xFF00043D),
                                       fontWeight: FontWeight.w800),
                                 ),
                                 Text(
@@ -229,34 +230,37 @@ class DashBoard extends StatelessWidget {
             ),
           ),
         ),
-        SizedBox(
+        const SizedBox(
           height: 10,
         ),
-        Row(
+        const Row(
           mainAxisAlignment: MainAxisAlignment.spaceAround,
           children: [
             Flexible(
                 child: DashBoardGradientFeature(
               iconimg: Icons.phone_iphone,
               btnText: 'Device Info',
+              widget: DeviceInfo(),
             )),
             Flexible(
                 child: DashBoardGradientFeature(
               iconimg: Icons.image,
               btnText: 'Gallery',
+              widget: DeviceInfo(),
             )),
             Flexible(
                 child: DashBoardGradientFeature(
               iconimg: Icons.mood,
               btnText: 'Mood',
+              widget: DeviceInfo(),
             )),
           ],
         ),
-        SizedBox(
+        const SizedBox(
           height: 20,
         ),
         Container(
-          padding: EdgeInsets.only(left: 25),
+          padding: const EdgeInsets.only(left: 25),
           alignment: Alignment.centerLeft,
           child: Text(
             "Our Feature",
@@ -264,15 +268,15 @@ class DashBoard extends StatelessWidget {
             style: GoogleFonts.nunito(
                 fontSize: 18,
                 fontWeight: FontWeight.w900,
-                color: Color(0xFF00043D),
+                color: const Color(0xFF00043D),
                 letterSpacing: 2),
           ),
         ),
-        SizedBox(
+        const SizedBox(
           height: 10,
         ),
-        Padding(
-          padding: const EdgeInsets.symmetric(horizontal: 10.0),
+        const Padding(
+          padding: EdgeInsets.symmetric(horizontal: 10.0),
           child: Row(
             children: [
               Flexible(
@@ -285,11 +289,11 @@ class DashBoard extends StatelessWidget {
             ],
           ),
         ),
-        SizedBox(
+        const SizedBox(
           height: 20,
         ),
-        Padding(
-          padding: const EdgeInsets.symmetric(horizontal: 10.0),
+        const Padding(
+          padding: EdgeInsets.symmetric(horizontal: 10.0),
           child: Row(
             children: [
               Flexible(
@@ -302,11 +306,11 @@ class DashBoard extends StatelessWidget {
             ],
           ),
         ),
-        SizedBox(
+        const SizedBox(
           height: 20,
         ),
-        Padding(
-          padding: const EdgeInsets.symmetric(horizontal: 10.0),
+        const Padding(
+          padding: EdgeInsets.symmetric(horizontal: 10.0),
           child: Row(
             children: [
               Flexible(
@@ -319,11 +323,11 @@ class DashBoard extends StatelessWidget {
             ],
           ),
         ),
-        SizedBox(
+        const SizedBox(
           height: 20,
         ),
-        Padding(
-          padding: const EdgeInsets.symmetric(horizontal: 10.0),
+        const Padding(
+          padding: EdgeInsets.symmetric(horizontal: 10.0),
           child: Row(
             children: [
               Flexible(
@@ -336,7 +340,7 @@ class DashBoard extends StatelessWidget {
             ],
           ),
         ),
-        SizedBox(
+        const SizedBox(
           height: 15,
         )
       ],

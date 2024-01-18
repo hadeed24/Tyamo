@@ -1,35 +1,43 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:tyamo/Views/features/deviceInfo/Device_info.dart';
 
 class DashBoardGradientFeature extends StatelessWidget {
   const DashBoardGradientFeature({
     super.key,
     required this.iconimg,
-    required this.btnText,
+    required this.btnText, required this.widget,
   });
   final IconData iconimg;
   final String btnText;
+  final Widget widget;
 
   @override
   Widget build(BuildContext context) {
     return Padding(
       padding: const EdgeInsets.symmetric(horizontal: 8.0),
-      child: Container(
-        alignment: Alignment.center,
-        height: 50,
-        width: double.infinity,
-        decoration: BoxDecoration(
-          borderRadius: BorderRadius.all(
-            Radius.circular(15),
+      child: ElevatedButton(
+        onPressed: () {
+          Navigator.push(
+            context,
+            MaterialPageRoute(
+              builder: (context) => widget,
+            ),
+          );
+        },
+        style: ElevatedButton.styleFrom(
+          padding: EdgeInsets.zero,
+          shape: RoundedRectangleBorder(
+            borderRadius: BorderRadius.circular(10),
           ),
-          boxShadow: [
-            BoxShadow(
-                color: Colors.grey, offset: Offset(0.0, 3.0), blurRadius: 3),
-          ],
-          color: Color(0xFF00043D),
+          elevation: 5,
+          primary: Color(0xFF00043D),
         ),
-        child: Padding(
-          padding: const EdgeInsets.all(8.0),
+        child: Container(
+          height: 50,
+          width: double.infinity,
+          padding: EdgeInsets.all(8.0),
+          alignment: Alignment.center,
           child: Row(
             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
             children: [
@@ -42,9 +50,11 @@ class DashBoardGradientFeature extends StatelessWidget {
                 child: Text(
                   btnText,
                   style: GoogleFonts.nunito(
-                      fontWeight: FontWeight.w200, color: Colors.white),
+                    fontWeight: FontWeight.w300,
+                    color: Colors.white,
+                  ),
                 ),
-              )
+              ),
             ],
           ),
         ),
@@ -61,27 +71,30 @@ class BtmDashBoardGradientFeature extends StatelessWidget {
   });
   final IconData iconimg;
   final String btnText;
-
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.symmetric(horizontal: 15 ,),
-      child: Container(
-        alignment: Alignment.center,
-        height: 60,
-        width: double.infinity,
-        decoration: BoxDecoration(
-          color: Colors.white,
-          borderRadius: BorderRadius.all(
-            Radius.circular(10),
+      padding: const EdgeInsets.symmetric(
+        horizontal: 15,
+      ),
+      child: ElevatedButton(
+        onPressed: () {
+          // Add your button click logic here
+        },
+        style: ElevatedButton.styleFrom(
+          padding: EdgeInsets.zero,
+          shape: RoundedRectangleBorder(
+            borderRadius: BorderRadius.circular(10),
           ),
-          boxShadow: [
-            BoxShadow(
-                color: Colors.grey, offset: Offset(0.0, 3.0), blurRadius: 5),
-          ],
+          elevation: 5,
+          primary: Colors.white,
+          shadowColor: Colors.grey,
         ),
-        child: Padding(
-          padding: const EdgeInsets.all(8.0),
+        child: Container(
+          height: 60,
+          width: double.infinity,
+          padding: EdgeInsets.all(8.0),
+          alignment: Alignment.center,
           child: Row(
             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
             children: [
@@ -94,7 +107,9 @@ class BtmDashBoardGradientFeature extends StatelessWidget {
                 child: Text(
                   btnText,
                   style: GoogleFonts.nunito(
-                      fontWeight: FontWeight.w700, color: Color(0xFF00043D)),
+                    fontWeight: FontWeight.w700,
+                    color: Color(0xFF00043D),
+                  ),
                 ),
               )
             ],

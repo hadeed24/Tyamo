@@ -4,8 +4,8 @@ import 'package:sleek_circular_slider/sleek_circular_slider.dart';
 import 'package:tyamo/Widgets/Features/Device_info/BatteryInfo/BatteryInfo_container.dart';
 import 'package:tyamo/Widgets/Common/logo_appbar.dart';
 
-class BatteryInfo extends StatelessWidget {
-  const BatteryInfo({super.key});
+class GeneralInfo extends StatelessWidget {
+  const GeneralInfo({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -35,7 +35,7 @@ class BatteryInfo extends StatelessWidget {
                   RotatedBox(
                     quarterTurns:
                         3, // Rotate the text 270 degrees (90 degrees clockwise)
-                    child: Text("Battery Status",
+                    child: Text("General Info",
                         style: GoogleFonts.nunito(
                             fontSize: 20,
                             fontWeight: FontWeight.w900,
@@ -45,13 +45,15 @@ class BatteryInfo extends StatelessWidget {
                     child: Column(
                       children: [
                         Expanded(
+                            flex: 1,
                             child: BatteryInfoContainer(
-                          subHeading: 'User Status',
-                          Heading: 'Discharging',
-                        )),
-                        Expanded(
+                              subHeading: 'Screen Status',
+                              Heading: 'UNLOCKED',
+                            )),
+                        Expanded(                            flex: 2,
+
                             child: BatteryInfoContainer(
-                          subHeading: 'Charging Type',
+                          subHeading: 'System',
                           Heading: 'N/A',
                         )),
                       ],
@@ -94,22 +96,6 @@ class BatteryInfo extends StatelessWidget {
                             Heading: '35.5',
                           )),
                         ]),
-                  ),
-                  const Expanded(
-                    child: Column(
-                      children: [
-                        Expanded(
-                            child: BatteryInfoContainer(
-                          subHeading: 'Battery Health',
-                          Heading: 'Good',
-                        )),
-                        Expanded(
-                            child: BatteryInfoContainer(
-                          subHeading: 'Battery\nTechnology',
-                          Heading: 'Li-Poly',
-                        )),
-                      ],
-                    ),
                   ),
                 ]),
               ),

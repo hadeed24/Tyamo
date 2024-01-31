@@ -1,14 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:responsive_sizer/responsive_sizer.dart';
-import 'package:tyamo/Views/Auth/Login.dart';
-
-import 'package:tyamo/Views/Invitation/invite_friend.dart';
-import 'package:tyamo/Views/Profile/Profile_settings.dart';
-import 'package:tyamo/Views/Profile/profile_setup.dart';
 import 'package:tyamo/Views/features/deviceInfo/BatteryInfo/BetteryInfo.dart';
-import 'package:tyamo/Views/features/deviceInfo/Device_info.dart';
+import 'package:tyamo/Views/features/deviceInfo/General_Info/General_Info.dart';
+
 import 'package:tyamo/Views/features/deviceInfo/UserStatus/UserStatus.dart';
-import 'package:tyamo/Views/homepage/dashboard_home.dart';
 
 void main() {
   runApp(const MyApp());
@@ -25,7 +20,7 @@ class MyApp extends StatelessWidget {
           theme: ThemeData(),
           debugShowCheckedModeBanner: false,
           title: 'Tyamo',
-          home: UserStatus());
+          home: GeneralInfo());
     });
   }
 }

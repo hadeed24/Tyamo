@@ -44,7 +44,7 @@ class DeviceInfo extends StatelessWidget {
             ),
           ),
           const SizedBox(height: 10),
-          const Expanded(
+           Expanded(
             child: Row(
               children: [
                 Expanded(
@@ -53,12 +53,12 @@ class DeviceInfo extends StatelessWidget {
                       Expanded(
                         flex: 6,
                         child: Padding(
-                          padding: EdgeInsets.only(left: 20),
+                          padding: const EdgeInsets.only(left: 20),
                           child: ButtonContainer(
                               txt: "User Status", widget: UserStatus()),
                         ),
                       ),
-                      Expanded(
+                      const Expanded(
                         flex: 4,
                         child: Padding(
                           padding: EdgeInsets.only(left: 20),
@@ -69,7 +69,7 @@ class DeviceInfo extends StatelessWidget {
                     ],
                   ),
                 ),
-                Expanded(
+                const Expanded(
                   child: Padding(
                     padding: EdgeInsets.only(right: 20),
                     child:

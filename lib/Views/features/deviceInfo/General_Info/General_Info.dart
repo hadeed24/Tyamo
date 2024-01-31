@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:sleek_circular_slider/sleek_circular_slider.dart';
 import 'package:tyamo/Widgets/Features/Device_info/BatteryInfo/BatteryInfo_container.dart';
 import 'package:tyamo/Widgets/Common/logo_appbar.dart';
+import 'package:tyamo/Widgets/Features/Device_info/General_info/two_widget_card.dart';
 
 class GeneralInfo extends StatelessWidget {
   const GeneralInfo({super.key});
@@ -50,51 +50,40 @@ class GeneralInfo extends StatelessWidget {
                               subHeading: 'Screen Status',
                               Heading: 'UNLOCKED',
                             )),
-                        Expanded(                            flex: 2,
-
-                            child: BatteryInfoContainer(
-                          subHeading: 'System',
-                          Heading: 'N/A',
-                        )),
+                        Expanded(
+                          flex: 2,
+                          child: TwoWidgetCard(
+                            subHeading1: 'System Volumn',
+                            Heading1: '7/10',
+                            subHeading2: 'Media Volumn',
+                            Heading2: '5/10',
+                          ),
+                        ),
                       ],
                     ),
                   ),
-                  Expanded(
+                  const Expanded(
                     child: Column(
                         mainAxisAlignment: MainAxisAlignment.spaceAround,
                         children: [
                           Expanded(
-                            flex: 2,
-                            child: BatteryInfoContainer(
-                              subHeading: 'Charging\nPercentage',
-                              Heading: 'Discharging',
-                              SubWidget: SleekCircularSlider(
-                                max: 70,
-                                min: 0,
-                                appearance: CircularSliderAppearance(
-                                  customColors: CustomSliderColors(
-                                    trackColor: const Color.fromARGB(
-                                        255, 190, 190, 190),
-                                    progressBarColor: const Color(0xFF00043D),
-                                  ),
-                                  size: 90,
-                                  infoProperties: InfoProperties(
-                                    mainLabelStyle: GoogleFonts.nunito(
-                                        fontWeight: FontWeight.w700,
-                                        fontSize: 20),
-                                  ),
-                                  customWidths:
-                                      CustomSliderWidths(progressBarWidth: 10),
-                                ),
-                                initialValue: 55,
+                              child: Column(children: [
+                            Expanded(
+                              flex: 2,
+                              child: TwoWidgetCard(
+                                subHeading1: 'Light Activity',
+                                Heading1: 'Dim light',
+                                subHeading2: 'Light Intensity',
+                                Heading2: '4',
                               ),
                             ),
-                          ),
-                          const Expanded(
-                              child: BatteryInfoContainer(
-                            subHeading: 'Temperature',
-                            Heading: '35.5',
-                          )),
+                            Expanded(
+                                flex: 1,
+                                child: BatteryInfoContainer(
+                                  subHeading: 'Brigtness',
+                                  Heading: '5.88%',
+                                )),
+                          ]))
                         ]),
                   ),
                 ]),
@@ -117,81 +106,56 @@ class GeneralInfo extends StatelessWidget {
                     child: Column(
                       children: [
                         Expanded(
+                            flex: 1,
                             child: BatteryInfoContainer(
-                          subHeading: 'User Status',
-                          Heading: 'Discharging',
-                        )),
+                              subHeading: 'Screen Status',
+                              Heading: 'UNLOCKED',
+                            )),
                         Expanded(
-                            child: BatteryInfoContainer(
-                          subHeading: 'Charging Type',
-                          Heading: 'N/A',
-                        )),
+                          flex: 2,
+                          child: TwoWidgetCard(
+                            subHeading1: 'System Volumn',
+                            Heading1: '7/10',
+                            subHeading2: 'Media Volumn',
+                            Heading2: '5/10',
+                          ),
+                        ),
                       ],
                     ),
                   ),
-                  Expanded(
+                  const Expanded(
                     child: Column(
                         mainAxisAlignment: MainAxisAlignment.spaceAround,
                         children: [
                           Expanded(
-                            flex: 2,
-                            child: BatteryInfoContainer(
-                              subHeading: 'Charging\nPercentage',
-                              Heading: 'Discharging',
-                              SubWidget: SleekCircularSlider(
-                                max: 70,
-                                min: 0,
-                                appearance: CircularSliderAppearance(
-                                  customColors: CustomSliderColors(
-                                    trackColor: const Color.fromARGB(
-                                        255, 190, 190, 190),
-                                    progressBarColor: const Color(0xFF00043D),
-                                  ),
-                                  size: 90,
-                                  infoProperties: InfoProperties(
-                                    mainLabelStyle: GoogleFonts.nunito(
-                                        fontWeight: FontWeight.w700,
-                                        fontSize: 20),
-                                  ),
-                                  customWidths:
-                                      CustomSliderWidths(progressBarWidth: 10),
-                                ),
-                                initialValue: 55,
+                              child: Column(children: [
+                            Expanded(
+                              flex: 2,
+                              child: TwoWidgetCard(
+                                subHeading1: 'Light Activity',
+                                Heading1: 'Dim light',
+                                subHeading2: 'Light Intensity',
+                                Heading2: '4',
                               ),
                             ),
-                          ),
-                          const Expanded(
-                              child: BatteryInfoContainer(
-                            subHeading: 'Temperature',
-                            Heading: '35.5',
-                          )),
+                            Expanded(
+                                flex: 1,
+                                child: BatteryInfoContainer(
+                                  subHeading: 'Brigtness',
+                                  Heading: '5.88%',
+                                )),
+                          ]))
                         ]),
                   ),
-                  const Expanded(
-                    child: Column(
-                      children: [
-                        Expanded(
-                            child: BatteryInfoContainer(
-                          subHeading: 'Battery Health',
-                          Heading: 'Good',
-                        )),
-                        Expanded(
-                            child: BatteryInfoContainer(
-                          subHeading: 'Battery\nTechnology',
-                          Heading: 'Li-Poly',
-                        )),
-                      ],
-                    ),
-                  ),
                   RotatedBox(
-                    quarterTurns:
-                        1, // Rotate the text 270 degrees (90 degrees clockwise)
-                    child: Text("My Battery Status",
-                        style: GoogleFonts.nunito(
-                            fontSize: 20,
-                            fontWeight: FontWeight.w900,
-                            color: Colors.white)),
-                  )
+                      quarterTurns:
+                          1, // Rotate the text 270 degrees (90 degrees clockwise)
+                      child: Text("My General Info",
+                          style: GoogleFonts.nunito(
+                              letterSpacing: 2,
+                              fontSize: 20,
+                              fontWeight: FontWeight.w900,
+                              color: Colors.white))),
                 ]),
               ),
             ),

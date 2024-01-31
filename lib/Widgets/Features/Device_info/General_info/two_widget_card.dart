@@ -52,21 +52,25 @@ class TwoWidgetCard extends StatelessWidget {
             SizedBox(
               height: 10,
             ),
-            Text(
-              subHeading2,
-              textAlign: TextAlign.center,
-              style:
-                  GoogleFonts.nunito(fontWeight: FontWeight.w400, fontSize: 12),
-            ),
-            const SizedBox(
-              height: 5,
-            ),
-            SubWidget2 ??
+            Container(
+              child: Column(children: [
                 Text(
-                  Heading2,
+                  subHeading2,
+                  textAlign: TextAlign.center,
                   style: GoogleFonts.nunito(
-                      fontWeight: FontWeight.w800, fontSize: 16),
-                )
+                      fontWeight: FontWeight.w400, fontSize: 12),
+                ),
+                const SizedBox(
+                  height: 5,
+                ),
+                SubWidget2 ??
+                    Text(
+                      Heading2,
+                      style: GoogleFonts.nunito(
+                          fontWeight: FontWeight.w800, fontSize: 16),
+                    )
+              ]),
+            )
           ],
         ),
       ),

@@ -6,10 +6,12 @@ class BatteryInfoContainer extends StatelessWidget {
       {super.key,
       required this.subHeading,
       required this.Heading,
-      this.SubWidget});
+      this.SubWidget,
+      this.clr});
   final String subHeading;
   final String Heading;
   final Widget? SubWidget;
+  final Color? clr;
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -25,16 +27,15 @@ class BatteryInfoContainer extends StatelessWidget {
               subHeading,
               textAlign: TextAlign.center,
               style:
-                  GoogleFonts.nunito(fontWeight: FontWeight.w400, fontSize: 12),
-            ),
-            const SizedBox(
-              height: 5,
+                  GoogleFonts.nunito(fontWeight: FontWeight.w500, fontSize: 12),
             ),
             SubWidget ??
                 Text(
                   Heading,
                   style: GoogleFonts.nunito(
-                      fontWeight: FontWeight.w800, fontSize: 16),
+                      fontWeight: FontWeight.w800,
+                      fontSize: 16,
+                      color: clr ?? Colors.black87),
                 )
           ],
         ),

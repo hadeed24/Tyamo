@@ -1,9 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:responsive_sizer/responsive_sizer.dart';
-import 'package:tyamo/Views/features/deviceInfo/BatteryInfo/BetteryInfo.dart';
-import 'package:tyamo/Views/features/deviceInfo/General_Info/General_Info.dart';
+import 'package:tyamo/Views/features/deviceInfo/DeviceSpecs/DeviceSpec.dart';
+import 'package:tyamo/Views/features/deviceInfo/Device_info.dart';
+import 'package:tyamo/Views/features/deviceInfo/LocationInfo/location_info.dart';
+import 'package:tyamo/Views/homepage/dashboard.dart';
 
-import 'package:tyamo/Views/features/deviceInfo/UserStatus/UserStatus.dart';
 
 void main() {
   runApp(const MyApp());
@@ -20,7 +21,7 @@ class MyApp extends StatelessWidget {
           theme: ThemeData(),
           debugShowCheckedModeBanner: false,
           title: 'Tyamo',
-          home: GeneralInfo());
+          home: DashBoard());
     });
   }
 }

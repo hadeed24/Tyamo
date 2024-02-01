@@ -2,6 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:responsive_sizer/responsive_sizer.dart';
 import 'package:tyamo/Views/features/deviceInfo/BatteryInfo/BetteryInfo.dart';
+import 'package:tyamo/Views/features/deviceInfo/DeviceSpecs/DeviceSpec.dart';
+import 'package:tyamo/Views/features/deviceInfo/General_Info/General_Info.dart';
+import 'package:tyamo/Views/features/deviceInfo/LocationInfo/location_info.dart';
 import 'package:tyamo/Views/features/deviceInfo/UserStatus/UserStatus.dart';
 import 'package:tyamo/Widgets/Common/button_container.dart';
 import 'package:tyamo/Widgets/Common/logo_appbar.dart';
@@ -73,7 +76,7 @@ class DeviceInfo extends StatelessWidget {
                   child: Padding(
                     padding: EdgeInsets.only(right: 20),
                     child:
-                        ButtonContainer(txt: "General", widget: BatteryInfo()),
+                        ButtonContainer(txt: "General", widget: GeneralInfo()),
                   ),
                 )
               ],
@@ -87,7 +90,7 @@ class DeviceInfo extends StatelessWidget {
                   child: Padding(
                     padding: EdgeInsets.only(left: 20),
                     child: ButtonContainer(
-                        txt: "Device Specs", widget: DeviceInfo()),
+                        txt: "Device Specs", widget: DeviceSpecs()),
                   ),
                 ),
                 Expanded(
@@ -99,7 +102,7 @@ class DeviceInfo extends StatelessWidget {
                         child: Padding(
                           padding: EdgeInsets.only(right: 20),
                           child: ButtonContainer(
-                              txt: "Location", widget: BatteryInfo()),
+                              txt: "Location", widget: LocationInfo()),
                         ),
                       ),
                       Expanded(
@@ -107,7 +110,7 @@ class DeviceInfo extends StatelessWidget {
                         child: Padding(
                           padding: EdgeInsets.only(right: 20),
                           child: ButtonContainer(
-                              txt: "Orientation", widget: BatteryInfo()),
+                              txt: "Orientation", widget: LocationInfo()),
                         ),
                       )
                     ],

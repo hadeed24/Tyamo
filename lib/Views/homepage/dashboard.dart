@@ -232,28 +232,31 @@ class DashBoard extends StatelessWidget {
             const SizedBox(
               height: 10,
             ),
-            const Row(
-              mainAxisAlignment: MainAxisAlignment.spaceAround,
-              children: [
-                Flexible(
-                    child: DashBoardGradientFeature(
-                  iconimg: Icons.phone_iphone,
-                  btnText: 'Device Info',
-                  widget: DeviceInfo(),
-                )),
-                Flexible(
-                    child: DashBoardGradientFeature(
-                  iconimg: Icons.image,
-                  btnText: 'Gallery',
-                  widget: DeviceInfo(),
-                )),
-                Flexible(
-                    child: DashBoardGradientFeature(
-                  iconimg: Icons.mood,
-                  btnText: 'Mood',
-                  widget: DeviceInfo(),
-                )),
-              ],
+            const Padding(
+              padding: EdgeInsets.symmetric(horizontal: 20),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceAround,
+                children: [
+                  Flexible(
+                      child: DashBoardGradientFeature(
+                    iconimg: Icons.phone_iphone,
+                    btnText: 'Device Info',
+                    widget: DeviceInfo(),
+                  )),
+                  Flexible(
+                      child: DashBoardGradientFeature(
+                    iconimg: Icons.image,
+                    btnText: 'Gallery',
+                    widget: DeviceInfo(),
+                  )),
+                  Flexible(
+                      child: DashBoardGradientFeature(
+                    iconimg: Icons.mood,
+                    btnText: 'Mood',
+                    widget: DeviceInfo(),
+                  )),
+                ],
+              ),
             ),
             const SizedBox(
               height: 20,
@@ -332,10 +335,10 @@ class DashBoard extends StatelessWidget {
                   Flexible(
                       child: BtmDashBoardGradientFeature(
                           iconimg: FontAwesomeIcons.houseMedical,
-                          btnText: "To-do List")),
+                          btnText: "Emergency")),
                   Flexible(
                       child: BtmDashBoardGradientFeature(
-                          iconimg: FontAwesomeIcons.book, btnText: "Diary")),
+                          iconimg: FontAwesomeIcons.accusoft, btnText: "Activity")),
                 ],
               ),
             ),

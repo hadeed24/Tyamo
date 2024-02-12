@@ -37,12 +37,8 @@ class _DashboardHomepageState extends State<DashboardHomepage> {
         });
       },
       children: [
-        Container(
-          child: SingleChildScrollView(child: ProfilePage()),
-        ),
-        Container(
-          child: SingleChildScrollView(child: DashBoard()),
-        ),
+        const SingleChildScrollView(child: ProfilePage()),
+        const SingleChildScrollView(child: DashBoard()),
         Container(
           color: Colors.green,
         ),
@@ -65,14 +61,14 @@ class _DashboardHomepageState extends State<DashboardHomepage> {
             onTap: () {
               _homapagekey.currentState!.openDrawer();
             },
-            child: Icon(
+            child: const Icon(
               Icons.menu,
               color: Color(0xFF00043D),
             ),
           ),
-          actions: [
+          actions: const [
             Padding(
-              padding: const EdgeInsets.only(right: 10),
+              padding: EdgeInsets.only(right: 10),
               child: Icon(
                 FontAwesomeIcons.commentDots,
                 color: Color(0xFF00043D),
@@ -92,41 +88,37 @@ class _DashboardHomepageState extends State<DashboardHomepage> {
                   children: [
                     Row(
                       children: [
-                        Container(
-                          child: Padding(
-                            padding: EdgeInsets.only(
-                              right: 17,
-                            ),
-                            child: CircularProfileAvatar(
-                              "",
-                              radius: 40,
-                              imageFit: BoxFit.contain,
-                              backgroundColor: Colors.cyan,
-                              elevation: 5,
-                              borderWidth: 1,
-                              borderColor: Color(0xFF00043D),
-                              cacheImage: true,
-                              errorWidget: (context, url, error) {
-                                return Icon(
-                                  Icons.face,
-                                  size: 50,
-                                );
-                              },
-                              onTap: () {
-                                pageController.animateToPage(0,
-                                    duration: Duration(milliseconds: 200),
-                                    curve: Curves.linear);
-                                Navigator.of(context).pop();
-                              },
-                              animateFromOldImageOnUrlChange: true,
-                              placeHolder: (context, url) {
-                                return Container(
-                                  child: Center(
-                                    child: CircularProgressIndicator(),
-                                  ),
-                                );
-                              },
-                            ),
+                        Padding(
+                          padding: const EdgeInsets.only(
+                            right: 17,
+                          ),
+                          child: CircularProfileAvatar(
+                            "",
+                            radius: 40,
+                            imageFit: BoxFit.contain,
+                            backgroundColor: Colors.cyan,
+                            elevation: 5,
+                            borderWidth: 1,
+                            borderColor: const Color(0xFF00043D),
+                            cacheImage: true,
+                            errorWidget: (context, url, error) {
+                              return const Icon(
+                                Icons.face,
+                                size: 50,
+                              );
+                            },
+                            onTap: () {
+                              pageController.animateToPage(0,
+                                  duration: const Duration(milliseconds: 200),
+                                  curve: Curves.linear);
+                              Navigator.of(context).pop();
+                            },
+                            animateFromOldImageOnUrlChange: true,
+                            placeHolder: (context, url) {
+                              return const Center(
+                                child: CircularProgressIndicator(),
+                              );
+                            },
                           ),
                         ),
                         Flexible(
@@ -139,7 +131,7 @@ class _DashboardHomepageState extends State<DashboardHomepage> {
                                 style: GoogleFonts.poppins(
                                     fontWeight: FontWeight.bold,
                                     fontSize: 18,
-                                    color: Color(0xFF00043D),
+                                    color: const Color(0xFF00043D),
                                     letterSpacing: 1),
                               ),
                               Text(
@@ -169,9 +161,9 @@ class _DashboardHomepageState extends State<DashboardHomepage> {
                   children: [
                     Container(
                       padding:
-                          EdgeInsets.symmetric(horizontal: 14, vertical: 6),
+                          const EdgeInsets.symmetric(horizontal: 14, vertical: 6),
                       decoration: BoxDecoration(
-                        color: Color(0xFF00043D),
+                        color: const Color(0xFF00043D),
                         borderRadius: BorderRadius.circular(50),
                       ),
                       child: Text(
@@ -185,7 +177,7 @@ class _DashboardHomepageState extends State<DashboardHomepage> {
                 ),
               ),
             ),
-            Expanded(
+            const Expanded(
               flex: 0,
               child: Divider(
                 color: Color.fromARGB(255, 209, 209, 209),
@@ -194,7 +186,7 @@ class _DashboardHomepageState extends State<DashboardHomepage> {
             Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                SizedBox(
+                const SizedBox(
                   height: 10,
                 ),
                 DrawerListTile(
@@ -233,7 +225,7 @@ class _DashboardHomepageState extends State<DashboardHomepage> {
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.end,
                 children: [
-                  Divider(),
+                  const Divider(),
                   DrawerListTile(
                       icon: FontAwesomeIcons.rightFromBracket,
                       text: "Sign Out",
@@ -246,7 +238,7 @@ class _DashboardHomepageState extends State<DashboardHomepage> {
       ),
       bottomNavigationBar: AnimatedBottomNavigationBar(
         icons: Iconlist,
-        activeColor: Color(0xFF00043D),
+        activeColor: const Color(0xFF00043D),
         activeIndex: page,
         splashSpeedInMilliseconds: 300,
         notchSmoothness: NotchSmoothness.softEdge,
@@ -257,7 +249,7 @@ class _DashboardHomepageState extends State<DashboardHomepage> {
           setState(() {
             pageView = p0;
             pageController.animateToPage(p0,
-                duration: Duration(milliseconds: 200), curve: Curves.linear);
+                duration: const Duration(milliseconds: 200), curve: Curves.linear);
           });
         },
       ),

@@ -26,12 +26,12 @@ class _ProfilePageState extends State<ProfilePage> {
               fontWeight: FontWeight.w900,
               letterSpacing: 2),
         ),
-        SizedBox(
+        const SizedBox(
           height: 40,
         ),
         Container(
           alignment: Alignment.center,
-          decoration: BoxDecoration(
+          decoration: const BoxDecoration(
               image: DecorationImage(
                   image: AssetImage("assets/images/doodle.png"),
                   fit: BoxFit.cover,
@@ -43,10 +43,10 @@ class _ProfilePageState extends State<ProfilePage> {
             backgroundColor: Colors.cyan,
             elevation: 5,
             borderWidth: 1,
-            borderColor: Color(0xFF00043D),
+            borderColor: const Color(0xFF00043D),
             cacheImage: true,
             errorWidget: (context, url, error) {
-              return Icon(
+              return const Icon(
                 Icons.face,
                 size: 50,
               );
@@ -54,15 +54,13 @@ class _ProfilePageState extends State<ProfilePage> {
             onTap: () {},
             animateFromOldImageOnUrlChange: true,
             placeHolder: (context, url) {
-              return Container(
-                child: Center(
-                  child: CircularProgressIndicator(),
-                ),
+              return const Center(
+                child: CircularProgressIndicator(),
               );
             },
           ),
         ),
-        SizedBox(
+        const SizedBox(
           height: 20,
         ),
         Text(
@@ -81,7 +79,7 @@ class _ProfilePageState extends State<ProfilePage> {
             fontWeight: FontWeight.w600,
           ),
         ),
-        SizedBox(
+        const SizedBox(
           height: 20,
         ),
         ElevatedButton(
@@ -98,9 +96,9 @@ class _ProfilePageState extends State<ProfilePage> {
               },
             ),
             side: MaterialStateProperty.all<BorderSide>(
-                BorderSide(color: Color(0xFF00043D))),
+                const BorderSide(color: Color(0xFF00043D))),
             backgroundColor: MaterialStateProperty.all<Color>(
-                Color.fromARGB(255, 252, 252, 252)),
+                const Color.fromARGB(255, 252, 252, 252)),
             shape: MaterialStateProperty.all<RoundedRectangleBorder>(
               RoundedRectangleBorder(
                 borderRadius: BorderRadius.circular(18.0),
@@ -112,19 +110,19 @@ class _ProfilePageState extends State<ProfilePage> {
             child: Text(
               "Edit Profile Details",
               style: GoogleFonts.poppins(
-                  fontWeight: FontWeight.w600, color: Color(0xFF00043D)),
+                  fontWeight: FontWeight.w600, color: const Color(0xFF00043D)),
             ),
           ),
         ),
-        SizedBox(
+        const SizedBox(
           height: 20,
         ),
         CardDetailRow(
             type: "Email",
             clr: Colors.grey.shade200,
-            icn: Icon(Icons.alternate_email),
+            icn: const Icon(Icons.alternate_email),
             val: "hlell"),
-        CardDetailRow(
+        const CardDetailRow(
             type: "Countery",
             clr: Colors.transparent,
             icn: Icon(Icons.flag),
@@ -132,10 +130,10 @@ class _ProfilePageState extends State<ProfilePage> {
         CardDetailRow(
             type: "Phone Number",
             clr: Colors.grey.shade200,
-            icn: Icon(Icons.phone_android_rounded),
+            icn: const Icon(Icons.phone_android_rounded),
             val: "hlell"),
         more
-            ? CardDetailRow(
+            ? const CardDetailRow(
                 type: "Gender",
                 clr: Colors.transparent,
                 icn: Icon(FontAwesomeIcons.venusMars),
@@ -145,11 +143,11 @@ class _ProfilePageState extends State<ProfilePage> {
             ? CardDetailRow(
                 type: "Partner",
                 clr: Colors.grey.shade200,
-                icn: Icon(Icons.person_2_rounded),
+                icn: const Icon(Icons.person_2_rounded),
                 val: "hlell")
             : Container(),
         more
-            ? CardDetailRow(
+            ? const CardDetailRow(
                 type: "UID",
                 clr: Colors.transparent,
                 icn: Icon(Icons.biotech),
@@ -159,10 +157,10 @@ class _ProfilePageState extends State<ProfilePage> {
             ? CardDetailRow(
                 type: "Account Created",
                 clr: Colors.grey.shade200,
-                icn: Icon(Icons.create),
+                icn: const Icon(Icons.create),
                 val: "hlell")
             : Container(),
-        SizedBox(
+        const SizedBox(
           height: 10,
         ),
         ElevatedButton(
@@ -201,14 +199,14 @@ class _ProfilePageState extends State<ProfilePage> {
             ),
           ),
         ),
-        SizedBox(
+        const SizedBox(
           height: 20,
         ),
         Row(
           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
           children: [
             Container(
-              decoration: BoxDecoration(
+              decoration: const BoxDecoration(
                   color: Color(0xff00043D),
                   borderRadius: BorderRadius.all(Radius.circular(30))),
               height: 150,
@@ -231,7 +229,7 @@ class _ProfilePageState extends State<ProfilePage> {
                   ]),
             ),
             Container(
-              decoration: BoxDecoration(
+              decoration: const BoxDecoration(
                   color: Color(0xff00043D),
                   borderRadius: BorderRadius.all(Radius.circular(30))),
               height: 150,
@@ -255,7 +253,7 @@ class _ProfilePageState extends State<ProfilePage> {
             ),
           ],
         ),
-        SizedBox(
+        const SizedBox(
           height: 20,
         ),
       ],
@@ -276,14 +274,15 @@ class CardDetailRow extends StatelessWidget {
       required this.icn,
       required this.val});
 
+  @override
   Widget build(BuildContext context) {
     return Container(
-      padding: EdgeInsets.symmetric(horizontal: 15, vertical: 5),
+      padding: const EdgeInsets.symmetric(horizontal: 15, vertical: 5),
       child: Container(
-        padding: EdgeInsets.symmetric(horizontal: 10, vertical: 10),
+        padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 10),
         decoration: BoxDecoration(
           color: clr,
-          borderRadius: BorderRadius.all(
+          borderRadius: const BorderRadius.all(
             Radius.circular(25),
           ),
         ),
@@ -295,7 +294,7 @@ class CardDetailRow extends StatelessWidget {
               width: 10,
               child: icn,
             ),
-            SizedBox(
+            const SizedBox(
               width: 20,
             ),
             Text(
@@ -307,7 +306,7 @@ class CardDetailRow extends StatelessWidget {
             ),
             Flexible(
                 child: Padding(
-              padding: EdgeInsets.symmetric(horizontal: 10),
+              padding: const EdgeInsets.symmetric(horizontal: 10),
               child: Align(
                 alignment: Alignment.centerRight,
                 child: Text(

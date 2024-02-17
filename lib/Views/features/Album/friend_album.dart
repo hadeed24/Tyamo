@@ -4,14 +4,14 @@ import 'package:focused_menu/modals.dart';
 import 'package:focused_menu/focused_menu.dart';
 import 'package:tyamo/Widgets/Features/album/gallery_header.dart';
 
-class MyAlbum extends StatefulWidget {
-  const MyAlbum({super.key});
+class friend_album extends StatefulWidget {
+  const friend_album({super.key});
 
   @override
-  State<MyAlbum> createState() => _MyAlbumState();
+  State<friend_album> createState() => _friend_albumState();
 }
 
-class _MyAlbumState extends State<MyAlbum> {
+class _friend_albumState extends State<friend_album> {
   @override
   Widget build(BuildContext context) {
     return SingleChildScrollView(
@@ -19,7 +19,7 @@ class _MyAlbumState extends State<MyAlbum> {
         children: [
           GalleryHeader(
             context: context,
-            tuVal: '8',
+            tuVal: '18',
             toVal: '0',
             isEditable: true,
             name: "Faizan",

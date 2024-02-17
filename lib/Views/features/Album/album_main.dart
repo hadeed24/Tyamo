@@ -1,6 +1,6 @@
 import 'package:animated_bottom_navigation_bar/animated_bottom_navigation_bar.dart';
 import 'package:flutter/material.dart';
-import 'package:tyamo/Views/features/Album/people.dart';
+import 'package:tyamo/Views/features/Album/friend_album.dart';
 import 'package:tyamo/Views/features/Album/myAlbum.dart';
 import 'package:tyamo/Widgets/Common/logo_appbar.dart';
 
@@ -35,7 +35,7 @@ class _AlbumMainState extends State<AlbumMain>
         },
         children: const [
           MyAlbum(),
-          People(),
+          friend_album(),
         ]);
   }
 

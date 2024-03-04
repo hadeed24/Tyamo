@@ -24,12 +24,12 @@ class AlbumNewPost extends StatelessWidget {
         ),
         body: ListView(
           children: [
-            Container(
+            SizedBox(
               height: 300,
               width: MediaQuery.of(context).size.width,
               child: Center(
                 child: Container(
-                  decoration: BoxDecoration(
+                  decoration: const BoxDecoration(
                     image: DecorationImage(
                         image: NetworkImage(
                             "https://i02.appmifile.com/images/2019/03/06/829199af-238d-46b6-8294-525d9e6e8226.png"),
@@ -38,32 +38,32 @@ class AlbumNewPost extends StatelessWidget {
                 ),
               ),
             ),
-            SizedBox(
+            const SizedBox(
               height: 10,
             ),
             ListTile(
-              leading: CircleAvatar(
+              leading: const CircleAvatar(
                 backgroundColor: Colors.blue,
               ),
-              title: Container(
+              title: SizedBox(
                 width: 250,
                 child: TextFormField(
                   controller: null,
-                  decoration: InputDecoration(
+                  decoration: const InputDecoration(
                       hintText: "Write a caption", border: InputBorder.none),
                   onChanged: (value) {},
                 ),
               ),
             ),
-            Divider(),
+            const Divider(),
             Padding(
               padding: const EdgeInsets.symmetric(horizontal: 150, vertical: 10),
-              child: Container(
+              child: SizedBox(
                   width: double.infinity,
                   child: ElevatedButton(
                       style: ButtonStyle(
                         backgroundColor:
-                            MaterialStateProperty.all<Color>(Color(0xFF00043D)),
+                            MaterialStateProperty.all<Color>(const Color(0xFF00043D)),
                         shape:
                             MaterialStateProperty.all<RoundedRectangleBorder>(
                           RoundedRectangleBorder(

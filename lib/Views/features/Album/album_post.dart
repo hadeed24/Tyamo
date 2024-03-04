@@ -10,6 +10,7 @@ import 'dart:ui' as prefix0;
 
 import 'package:google_fonts/google_fonts.dart';
 import 'package:list_tile_more_customizable/list_tile_more_customizable.dart';
+import 'package:tyamo/Views/features/Album/image_view.dart';
 
 class AlbumPost extends StatelessWidget {
   const AlbumPost({super.key});
@@ -83,11 +84,27 @@ class AlbumPost extends StatelessWidget {
                               SizedBox(
                                 height: 300,
                                 width: 300,
-                                child: ClipRRect(
-                                  borderRadius: BorderRadius.circular(15),
-                                  child: Image.network(
-                                    "https://images.pexels.com/photos/11650554/pexels-photo-11650554.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
-                                    fit: BoxFit.cover,
+                                child: GestureDetector(
+                                  onTap: () {
+                                    Navigator.push(
+                                      context,
+                                      MaterialPageRoute(
+                                        builder: (context) => const ImageView(
+                                            url:
+                                                'https://images.pexels.com/photos/11650554/pexels-photo-11650554.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1'),
+                                      ),
+                                    );
+                                  },
+                                  child: ClipRRect(
+                                    borderRadius: BorderRadius.circular(15),
+                                    child: Hero(
+                                      tag:
+                                          "https://images.pexels.com/photos/11650554/pexels-photo-11650554.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+                                      child: Image.network(
+                                        "https://images.pexels.com/photos/11650554/pexels-photo-11650554.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+                                        fit: BoxFit.cover,
+                                      ),
+                                    ),
                                   ),
                                 ),
                               ),
@@ -334,12 +351,11 @@ class AlbumPost extends StatelessWidget {
                           },
                         ),
                         const SizedBox(
-                    height: 60,
-                  )
+                          height: 60,
+                        )
                       ],
                     ),
                   ),
-                  
                 ],
               ),
             ),

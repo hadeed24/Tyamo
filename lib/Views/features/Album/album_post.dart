@@ -333,7 +333,7 @@ class AlbumPost extends StatelessWidget {
                             );
                           },
                         ),
-                        SizedBox(
+                        const SizedBox(
                     height: 60,
                   )
                       ],

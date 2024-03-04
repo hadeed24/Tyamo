@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:page_transition/page_transition.dart';
 import 'package:responsive_sizer/responsive_sizer.dart';
 import 'package:tyamo/Views/Invitation/accept_invite.dart';
 import 'package:tyamo/Widgets/Common/logo_appbar.dart';
@@ -18,7 +17,7 @@ class Invitefriend extends StatelessWidget {
         child: AppBar(
           elevation: 0,
           backgroundColor: Colors.white,
-          flexibleSpace: Center(child: LogoAppbar()),
+          flexibleSpace: const Center(child: LogoAppbar()),
           leading: null,
           actions: [
             GestureDetector(
@@ -26,7 +25,7 @@ class Invitefriend extends StatelessWidget {
                 Navigator.push(
                   context,
                   MaterialPageRoute(
-                    builder: (context) =>  AcceptInvite(),
+                    builder: (context) =>  const AcceptInvite(),
                   ),
                 );
               },

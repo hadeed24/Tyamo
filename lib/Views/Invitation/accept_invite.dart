@@ -8,7 +8,7 @@ import 'package:tyamo/Views/Invitation/invite_friend.dart';
 import 'package:tyamo/Widgets/Common/logo_appbar.dart';
 
 class AcceptInvite extends StatelessWidget {
-  AcceptInvite({super.key});
+  const AcceptInvite({super.key});
 
   @override
   Widget build(BuildContext context) {

@@ -12,180 +12,174 @@ class profile_setting extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       body: SingleChildScrollView(
-        child: Container(
-          child: Stack(
-            children: [
-              Container(
-                height: 330,
-                decoration: BoxDecoration(
-                  color: Color(0xFF00043D),
-                  borderRadius: BorderRadius.vertical(
-                    bottom: Radius.elliptical(
-                        MediaQuery.of(context).size.width, 130),
-                  ),
+        child: Stack(
+          children: [
+            Container(
+              height: 330,
+              decoration: BoxDecoration(
+                color: const Color(0xFF00043D),
+                borderRadius: BorderRadius.vertical(
+                  bottom: Radius.elliptical(
+                      MediaQuery.of(context).size.width, 130),
                 ),
               ),
-              Padding(
-                padding:
-                    const EdgeInsets.symmetric(horizontal: 20, vertical: 40),
-                child: Column(
-                  children: [
-                    Row(
+            ),
+            Padding(
+              padding:
+                  const EdgeInsets.symmetric(horizontal: 20, vertical: 40),
+              child: Column(
+                children: [
+                  Row(
+                    children: [
+                      const Icon(
+                        Icons.settings,
+                        color: Colors.white,
+                        size: 23,
+                      ),
+                      const SizedBox(
+                        width: 05,
+                      ),
+                      Text(
+                        "Setting",
+                        style: GoogleFonts.nunito(
+                            color: Colors.white,
+                            fontSize: 23,
+                            fontWeight: FontWeight.w900),
+                      )
+                    ],
+                  ),
+                  const SizedBox(
+                    height: 30,
+                  ),
+                  Card(
+                    color: Colors.white,
+                    child: Column(
                       children: [
-                        Icon(
-                          Icons.settings,
-                          color: Colors.white,
-                          size: 23,
+                        Container(
+                          padding: const EdgeInsets.symmetric(
+                              horizontal: 20, vertical: 20),
+                          child: Row(
+                            children: [
+                              CircularProfileAvatar(
+                                "",
+                                radius: 30,
+                                imageFit: BoxFit.contain,
+                                backgroundColor: Colors.cyan,
+                                elevation: 5,
+                                borderWidth: 1,
+                                borderColor: const Color(0xFF00043D),
+                                cacheImage: true,
+                                errorWidget: (context, url, error) {
+                                  return const Icon(
+                                    Icons.face,
+                                    size: 20,
+                                  );
+                                },
+                                onTap: () {},
+                                animateFromOldImageOnUrlChange: true,
+                                placeHolder: (context, url) {
+                                  return const Center(
+                                    child: CircularProgressIndicator(),
+                                  );
+                                },
+                              ),
+                              const SizedBox(
+                                width: 20,
+                              ),
+                              Text(
+                                "Abdul Hadeed",
+                                style: GoogleFonts.nunito(
+                                    letterSpacing: 0.5,
+                                    color: Colors.black,
+                                    fontSize: 16,
+                                    fontWeight: FontWeight.w700),
+                              ),
+                            ],
+                          ),
                         ),
-                        SizedBox(
-                          width: 05,
+                        const Divider(
+                          height: 5,
                         ),
-                        Text(
-                          "Setting",
-                          style: GoogleFonts.nunito(
-                              color: Colors.white,
-                              fontSize: 23,
-                              fontWeight: FontWeight.w900),
+                        const SizedBox(
+                          height: 20,
+                        ),
+                        const Profile_s_Heading(txt: "Profile Setting"),
+                        const PR_setting_2nd_heading(txt: "Edit Name"),
+                        const PR_setting_2nd_heading(txt: "Edit Phone Number"),
+                        const PR_setting_2nd_heading(txt: "Change Password"),
+                        PR_setting_2nd_heading(
+                          txt: "Email Status",
+                          Secondary_widget: Row(
+                            children: [
+                              Text(
+                                "not verified",
+                                style: GoogleFonts.nunito(
+                                    fontWeight: FontWeight.w600,
+                                    color: Colors.red),
+                              ),
+                              const SizedBox(
+                                width: 10,
+                              ),
+                              const Icon(
+                                FontAwesomeIcons.arrowRight,
+                                size: 14,
+                              )
+                            ],
+                          ),
+                        ),
+                        const SizedBox(
+                          height: 10,
+                        ),
+                        const Profile_s_Heading(txt: "Notification Setting"),
+                        const SizedBox(
+                          height: 10,
+                        ),
+                        PR_setting_2nd_heading(
+                          txt: "Pust Notification",
+                          Secondary_widget: GFToggle(
+                            onChanged: (val) {},
+                            enabledTrackColor: const Color(0xFF00043D),
+                            type: GFToggleType.android,
+                            value: true,
+                          ),
+                        ),
+                        const SizedBox(
+                          height: 10,
+                        ),
+                        const Profile_s_Heading(txt: "Application Setting"),
+                        const SizedBox(
+                          height: 10,
+                        ),
+                        PR_setting_2nd_heading(
+                          txt: "Background Status",
+                          Secondary_widget: Row(
+                            children: [
+                              Text(
+                                "not verified",
+                                style: GoogleFonts.nunito(
+                                    fontWeight: FontWeight.w600,
+                                    color: Colors.red),
+                              ),
+                              const SizedBox(
+                                width: 10,
+                              ),
+                              const Icon(
+                                FontAwesomeIcons.arrowRight,
+                                size: 14,
+                              )
+                            ],
+                          ),
+                        ),
+                        const SizedBox(
+                          height: 10,
                         )
                       ],
                     ),
-                    SizedBox(
-                      height: 30,
-                    ),
-                    Card(
-                      color: Colors.white,
-                      child: Container(
-                        child: Column(
-                          children: [
-                            Container(
-                              padding: EdgeInsets.symmetric(
-                                  horizontal: 20, vertical: 20),
-                              child: Row(
-                                children: [
-                                  CircularProfileAvatar(
-                                    "",
-                                    radius: 30,
-                                    imageFit: BoxFit.contain,
-                                    backgroundColor: Colors.cyan,
-                                    elevation: 5,
-                                    borderWidth: 1,
-                                    borderColor: Color(0xFF00043D),
-                                    cacheImage: true,
-                                    errorWidget: (context, url, error) {
-                                      return Icon(
-                                        Icons.face,
-                                        size: 20,
-                                      );
-                                    },
-                                    onTap: () {},
-                                    animateFromOldImageOnUrlChange: true,
-                                    placeHolder: (context, url) {
-                                      return Container(
-                                        child: Center(
-                                          child: CircularProgressIndicator(),
-                                        ),
-                                      );
-                                    },
-                                  ),
-                                  SizedBox(
-                                    width: 20,
-                                  ),
-                                  Text(
-                                    "Abdul Hadeed",
-                                    style: GoogleFonts.nunito(
-                                        letterSpacing: 0.5,
-                                        color: Colors.black,
-                                        fontSize: 16,
-                                        fontWeight: FontWeight.w700),
-                                  ),
-                                ],
-                              ),
-                            ),
-                            Divider(
-                              height: 5,
-                            ),
-                            SizedBox(
-                              height: 20,
-                            ),
-                            Profile_s_Heading(txt: "Profile Setting"),
-                            PR_setting_2nd_heading(txt: "Edit Name"),
-                            PR_setting_2nd_heading(txt: "Edit Phone Number"),
-                            PR_setting_2nd_heading(txt: "Change Password"),
-                            PR_setting_2nd_heading(
-                              txt: "Email Status",
-                              Secondary_widget: Row(
-                                children: [
-                                  Text(
-                                    "not verified",
-                                    style: GoogleFonts.nunito(
-                                        fontWeight: FontWeight.w600,
-                                        color: Colors.red),
-                                  ),
-                                  SizedBox(
-                                    width: 10,
-                                  ),
-                                  Icon(
-                                    FontAwesomeIcons.arrowRight,
-                                    size: 14,
-                                  )
-                                ],
-                              ),
-                            ),
-                            SizedBox(
-                              height: 10,
-                            ),
-                            Profile_s_Heading(txt: "Notification Setting"),
-                            SizedBox(
-                              height: 10,
-                            ),
-                            PR_setting_2nd_heading(
-                              txt: "Pust Notification",
-                              Secondary_widget: GFToggle(
-                                onChanged: (val) {},
-                                enabledTrackColor: Color(0xFF00043D),
-                                type: GFToggleType.android,
-                                value: true,
-                              ),
-                            ),
-                            SizedBox(
-                              height: 10,
-                            ),
-                            Profile_s_Heading(txt: "Application Setting"),
-                            SizedBox(
-                              height: 10,
-                            ),
-                            PR_setting_2nd_heading(
-                              txt: "Background Status",
-                              Secondary_widget: Row(
-                                children: [
-                                  Text(
-                                    "not verified",
-                                    style: GoogleFonts.nunito(
-                                        fontWeight: FontWeight.w600,
-                                        color: Colors.red),
-                                  ),
-                                  SizedBox(
-                                    width: 10,
-                                  ),
-                                  Icon(
-                                    FontAwesomeIcons.arrowRight,
-                                    size: 14,
-                                  )
-                                ],
-                              ),
-                            ),
-                            SizedBox(
-                              height: 10,
-                            )
-                          ],
-                        ),
-                      ),
-                    )
-                  ],
-                ),
-              )
-            ],
-          ),
+                  )
+                ],
+              ),
+            )
+          ],
         ),
       ),
     );

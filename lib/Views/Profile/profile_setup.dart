@@ -11,6 +11,8 @@ import 'package:tyamo/Widgets/Auth/auth_text_fields.dart';
 import 'package:rounded_loading_button/rounded_loading_button.dart';
 
 class Profile_setup extends StatefulWidget {
+  const Profile_setup({super.key});
+
   @override
   State<Profile_setup> createState() => _Profile_setupState();
 }
@@ -20,7 +22,6 @@ class _Profile_setupState extends State<Profile_setup> {
       RoundedLoadingButtonController();
 
   void loginbt() {
-    print("HELLO");
   }
 
   bool isMale = false;
@@ -80,7 +81,7 @@ class _Profile_setupState extends State<Profile_setup> {
             const SizedBox(
               height: 60,
             ),
-            Padding(
+            const Padding(
               padding: EdgeInsets.symmetric(horizontal: 40),
               child: Auth_text_fields(
                   false, Icons.face, 15, 15, TextInputType.text, 15, "Name"),
@@ -88,7 +89,7 @@ class _Profile_setupState extends State<Profile_setup> {
             const SizedBox(
               height: 20,
             ),
-            Padding(
+            const Padding(
               padding: EdgeInsets.symmetric(horizontal: 40),
               child: Auth_text_fields(false, Icons.keyboard, 15, 15,
                   TextInputType.text, 15, "Username"),
@@ -163,7 +164,7 @@ class _Profile_setupState extends State<Profile_setup> {
               height: 40,
             ),
             Padding(
-              padding: EdgeInsets.symmetric(horizontal: 40),
+              padding: const EdgeInsets.symmetric(horizontal: 40),
               child: Hero(
                 tag: "Auth",
                 child: RoundedLoadingButton(
@@ -172,14 +173,14 @@ class _Profile_setupState extends State<Profile_setup> {
                   color: const Color(0xff000221),
                   controller: _btnController,
                   onPressed: () async {
-                    Timer(Duration(seconds: 3), () {
+                    Timer(const Duration(seconds: 3), () {
                       _btnController.success();
 
                       Navigator.pushReplacement(
                         context,
                         PageTransition(
                           type: PageTransitionType.fade,
-                          child: Invitefriend(),
+                          child: const Invitefriend(),
                         ),
                       );
                     });

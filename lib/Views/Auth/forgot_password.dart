@@ -10,18 +10,19 @@ class Forgot_password extends StatelessWidget {
   final RoundedLoadingButtonController _btnController =
       RoundedLoadingButtonController();
 
+  Forgot_password({super.key});
+
   void loginbt() {
-    print("HELLO");
   }
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        iconTheme: IconThemeData(color: Colors.white), // Set the color here
+        iconTheme: const IconThemeData(color: Colors.white), // Set the color here
 
-        flexibleSpace: Center(child: LogoAppbar_n()),
-        backgroundColor: Color(0xff000221),
+        flexibleSpace: const Center(child: LogoAppbar_n()),
+        backgroundColor: const Color(0xff000221),
         centerTitle: true,
       ),
       body: SingleChildScrollView(
@@ -31,14 +32,14 @@ class Forgot_password extends StatelessWidget {
             const SizedBox(
               height: 30,
             ),
-            AuthHeading("Forgort Password?", "", "assets/images/icon.png", 16,
-                18, const Color(0xff000221)),
-            Container(
+            const AuthHeading("Forgort Password?", "", "assets/images/icon.png", 16,
+                18, Color(0xff000221)),
+            SizedBox(
               height: 20.h,
               width: 40.w,
               child: Image.asset(
                 "assets/images/reset_password.png",
-                color: Color(0xff000221),
+                color: const Color(0xff000221),
                 filterQuality: FilterQuality.high,
               ),
             ),
@@ -53,7 +54,7 @@ class Forgot_password extends StatelessWidget {
             const SizedBox(
               height: 40,
             ),
-            Auth_text_fields(false, Icons.alternate_email, 15, 15,
+            const Auth_text_fields(false, Icons.alternate_email, 15, 15,
                 TextInputType.emailAddress, 15, "Email"),
             const SizedBox(
               height: 40,

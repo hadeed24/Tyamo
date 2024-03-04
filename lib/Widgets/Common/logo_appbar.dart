@@ -16,7 +16,7 @@ class LogoAppbar extends StatelessWidget {
             child: Image.asset(
               "assets/images/logo.png",
               fit: BoxFit.contain,
-              color: Color(0xFF00043D),
+              color: const Color(0xFF00043D),
               filterQuality: FilterQuality.high,
             ),
           ),

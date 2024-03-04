@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:responsive_sizer/responsive_sizer.dart';
 import 'package:tyamo/Views/features/Album/album_main.dart';
+import 'package:tyamo/Views/features/Album/album_new_post.dart';
 import 'package:tyamo/Views/features/Album/album_post.dart';
 
 
@@ -19,7 +20,7 @@ class MyApp extends StatelessWidget {
           theme: ThemeData(),
           debugShowCheckedModeBanner: false,
           title: 'Tyamo',
-          home:  AlbumPost());
+          home:  AlbumNewPost());
     });
   }
 }

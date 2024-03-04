@@ -1,7 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:tyamo/Views/features/deviceInfo/BatteryInfo/BetteryInfo.dart';
-import 'package:tyamo/Views/features/deviceInfo/Device_info.dart';
 
 class ButtonContainer extends StatelessWidget {
   const ButtonContainer({super.key, required this.txt, required this.widget});

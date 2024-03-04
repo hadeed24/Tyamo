@@ -26,7 +26,7 @@ class DrawerListTile extends StatelessWidget {
                 child: Icon(
                   icon,
                   size: 20,
-                  color: Color(0xFF00043D),
+                  color: const Color(0xFF00043D),
                 ),
               ),
               Padding(
@@ -34,7 +34,7 @@ class DrawerListTile extends StatelessWidget {
                 child: Text(
                   text,
                   style: GoogleFonts.poppins(
-                      color: Color(0xFF00043D),
+                      color: const Color(0xFF00043D),
                       fontSize: 13,
                       letterSpacing: 1,
                       fontWeight: FontWeight.w700),

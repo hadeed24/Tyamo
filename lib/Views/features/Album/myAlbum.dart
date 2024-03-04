@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_staggered_grid_view/flutter_staggered_grid_view.dart';
 import 'package:focused_menu/modals.dart';
 import 'package:focused_menu/focused_menu.dart';
+import 'package:tyamo/Views/features/Album/album_post.dart';
 import 'package:tyamo/Widgets/Features/album/gallery_header.dart';
 
 class MyAlbum extends StatefulWidget {
@@ -56,7 +57,12 @@ class _MyAlbumState extends State<MyAlbum> {
               FocusedMenuItem(
                   title: const Text("Open"),
                   trailingIcon: const Icon(Icons.open_in_new),
-                  onPressed: () {}),
+                  onPressed: () {Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: (context) => const AlbumPost(),
+                ),
+              );}),
           
               FocusedMenuItem(
                   title: const Text(

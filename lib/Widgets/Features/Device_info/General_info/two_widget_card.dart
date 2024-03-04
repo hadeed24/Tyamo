@@ -28,34 +28,10 @@ class TwoWidgetCard extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.center,
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
-            Container(
-              child: Column(
-                children: [
-                  Text(
-                    subHeading1,
-                    textAlign: TextAlign.center,
-                    style: GoogleFonts.nunito(
-                        fontWeight: FontWeight.w400, fontSize: 12),
-                  ),
-                  const SizedBox(
-                    height: 5,
-                  ),
-                  SubWidget1 ??
-                      Text(
-                        Heading1,
-                        style: GoogleFonts.nunito(
-                            fontWeight: FontWeight.w800, fontSize: 16),
-                      )
-                ],
-              ),
-            ),
-            SizedBox(
-              height: 10,
-            ),
-            Container(
-              child: Column(children: [
+            Column(
+              children: [
                 Text(
-                  subHeading2,
+                  subHeading1,
                   textAlign: TextAlign.center,
                   style: GoogleFonts.nunito(
                       fontWeight: FontWeight.w400, fontSize: 12),
@@ -63,14 +39,34 @@ class TwoWidgetCard extends StatelessWidget {
                 const SizedBox(
                   height: 5,
                 ),
-                SubWidget2 ??
+                SubWidget1 ??
                     Text(
-                      Heading2,
+                      Heading1,
                       style: GoogleFonts.nunito(
                           fontWeight: FontWeight.w800, fontSize: 16),
                     )
-              ]),
-            )
+              ],
+            ),
+            const SizedBox(
+              height: 10,
+            ),
+            Column(children: [
+              Text(
+                subHeading2,
+                textAlign: TextAlign.center,
+                style: GoogleFonts.nunito(
+                    fontWeight: FontWeight.w400, fontSize: 12),
+              ),
+              const SizedBox(
+                height: 5,
+              ),
+              SubWidget2 ??
+                  Text(
+                    Heading2,
+                    style: GoogleFonts.nunito(
+                        fontWeight: FontWeight.w800, fontSize: 16),
+                  )
+            ])
           ],
         ),
       ),

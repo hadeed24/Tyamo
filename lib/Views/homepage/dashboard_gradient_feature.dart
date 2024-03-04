@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:tyamo/Views/features/deviceInfo/Device_info.dart';
 
 class DashBoardGradientFeature extends StatelessWidget {
   const DashBoardGradientFeature({
@@ -26,17 +25,16 @@ class DashBoardGradientFeature extends StatelessWidget {
           );
         },
         style: ElevatedButton.styleFrom(
-          padding: EdgeInsets.zero,
+          padding: EdgeInsets.zero, backgroundColor: const Color(0xFF00043D),
           shape: RoundedRectangleBorder(
             borderRadius: BorderRadius.circular(10),
           ),
           elevation: 5,
-          primary: Color(0xFF00043D),
         ),
         child: Container(
           height: 50,
           width: double.infinity,
-          padding: EdgeInsets.all(8.0),
+          padding: const EdgeInsets.all(8.0),
           alignment: Alignment.center,
           child: Row(
             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
@@ -82,18 +80,17 @@ class BtmDashBoardGradientFeature extends StatelessWidget {
           // Add your button click logic here
         },
         style: ElevatedButton.styleFrom(
-          padding: EdgeInsets.zero,
+          padding: EdgeInsets.zero, backgroundColor: Colors.white,
           shape: RoundedRectangleBorder(
             borderRadius: BorderRadius.circular(10),
           ),
           elevation: 5,
-          primary: Colors.white,
           shadowColor: Colors.grey,
         ),
         child: Container(
           height: 60,
           width: double.infinity,
-          padding: EdgeInsets.all(8.0),
+          padding: const EdgeInsets.all(8.0),
           alignment: Alignment.center,
           child: Row(
             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
@@ -101,14 +98,14 @@ class BtmDashBoardGradientFeature extends StatelessWidget {
               Icon(
                 iconimg,
                 size: 25,
-                color: Color(0xFF00043D),
+                color: const Color(0xFF00043D),
               ),
               Flexible(
                 child: Text(
                   btnText,
                   style: GoogleFonts.nunito(
                     fontWeight: FontWeight.w700,
-                    color: Color(0xFF00043D),
+                    color: const Color(0xFF00043D),
                   ),
                 ),
               )

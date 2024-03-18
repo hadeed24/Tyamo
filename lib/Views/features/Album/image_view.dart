@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:photo_view/photo_view.dart';
-import 'package:tyamo/Widgets/Common/logo_appbar.dart';
 
 class ImageView extends StatelessWidget {
   const ImageView({super.key, required this.url});

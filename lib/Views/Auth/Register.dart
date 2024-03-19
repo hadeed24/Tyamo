@@ -1,5 +1,6 @@
 import 'dart:async';
 
+import 'package:achievement_view/achievement_view.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:page_transition/page_transition.dart';
@@ -91,18 +92,53 @@ class Register extends StatelessWidget {
                 color: const Color(0xff000221),
                 controller: _btnController,
                 onPressed: () async {
-                  print("AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA");
-                  print(registerSerivces.passwordController.text);
-                  print(registerSerivces.confirmPasswordController.text);
-                  print("AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA");
                   if (registerSerivces.passwordController.text ==
                       registerSerivces.confirmPasswordController.text) {
                     print("OOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO");
                     UserController().userRegister(
                         registerSerivces.emailController.text,
                         registerSerivces.passwordController.text);
+                    AchievementView(
+                        title: "Success",
+                        subTitle: "Account have been registered",
+                        color: Colors.green,
+                        //content: Widget()
+                        //onTab: _onTabAchievement,
+                        icon: const Icon(
+                          Icons.insert_emoticon,
+                          color: Colors.white,
+                        ),
+                        //typeAnimationContent: AnimationTypeAchievement.fadeSlideToUp,
+                        //borderRadius: 5.0,
+                        //color: Colors.blueGrey,
+                        //textStyleTitle: TextStyle(),
+                        //textStyleSubTitle: TextStyle(),
+                        //alignment: Alignment.topCenter,
+                        //duration: Duration(seconds: 3),
+                        //isCircle: false,
+                        listener: (status) {
+                          print(status);
+                          //AchievementState.opening
+                          //AchievementState.open
+                          //AchievementState.closing
+                          //AchievementState.closed
+                        }).show(context);
                   } else {
-                    print("XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX");
+                    AchievementView(
+                        title: "Error",
+                        subTitle: "Password does not match",
+                        color: Colors.redAccent,
+                        icon: const Icon(
+                          Icons.sentiment_very_dissatisfied,
+                          color: Colors.white,
+                        ),
+                        listener: (status) {
+                          print(status);
+                          //AchievementState.opening
+                          //AchievementState.open
+                          //AchievementState.closing
+                          //AchievementState.closed
+                        }).show(context);
                   }
 
                   /* Timer(const Duration(seconds: 1), () {

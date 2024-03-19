@@ -21,8 +21,7 @@ class _Profile_setupState extends State<Profile_setup> {
   final RoundedLoadingButtonController _btnController =
       RoundedLoadingButtonController();
 
-  void loginbt() {
-  }
+  void loginbt() {}
 
   bool isMale = false;
 
@@ -81,18 +80,27 @@ class _Profile_setupState extends State<Profile_setup> {
             const SizedBox(
               height: 60,
             ),
-            const Padding(
-              padding: EdgeInsets.symmetric(horizontal: 40),
+            Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 40),
               child: Auth_text_fields(
-                  false, Icons.face, 15, 15, TextInputType.text, 15, "Name"),
+                false,
+                Icons.face,
+                15,
+                15,
+                TextInputType.text,
+                15,
+                "Name",
+                controller: TextEditingController(),
+              ),
             ),
             const SizedBox(
               height: 20,
             ),
-            const Padding(
-              padding: EdgeInsets.symmetric(horizontal: 40),
+            Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 40),
               child: Auth_text_fields(false, Icons.keyboard, 15, 15,
-                  TextInputType.text, 15, "Username"),
+                  TextInputType.text, 15, "Username",
+                  controller: TextEditingController()),
             ),
             const SizedBox(
               height: 60,

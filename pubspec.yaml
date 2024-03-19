@@ -53,6 +53,7 @@ dependencies:
   list_tile_more_customizable: ^3.0.0
   photo_view: ^0.14.0
   firebase_core: ^2.27.0
+  firebase_auth: ^4.17.8
 
 dev_dependencies:
   flutter_test:

@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:responsive_sizer/responsive_sizer.dart';
 import 'package:rounded_loading_button/rounded_loading_button.dart';
+import 'package:tyamo/Interfaces/Auth/forgot_services.dart';
 import 'package:tyamo/Widgets/Auth/auth_heading.dart';
 import 'package:tyamo/Widgets/Auth/auth_text_fields.dart';
 import 'package:tyamo/Widgets/Common/logo_appbar_normail.dart';
@@ -9,6 +10,8 @@ import 'package:tyamo/Widgets/Common/logo_appbar_normail.dart';
 class Forgot_password extends StatelessWidget {
   final RoundedLoadingButtonController _btnController =
       RoundedLoadingButtonController();
+
+      final ForgotSerivces forgotSerivces = ForgotSerivces();
 
   Forgot_password({super.key});
 
@@ -54,8 +57,8 @@ class Forgot_password extends StatelessWidget {
             const SizedBox(
               height: 40,
             ),
-            const Auth_text_fields(false, Icons.alternate_email, 15, 15,
-                TextInputType.emailAddress, 15, "Email"),
+             Auth_text_fields(false, Icons.alternate_email, 15, 15,
+                TextInputType.emailAddress, 15, "Email", controller: forgotSerivces.emailController,),
             const SizedBox(
               height: 40,
             ),

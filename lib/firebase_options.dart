@@ -17,19 +17,13 @@ import 'package:flutter/foundation.dart'
 class DefaultFirebaseOptions {
   static FirebaseOptions get currentPlatform {
     if (kIsWeb) {
-      throw UnsupportedError(
-        'DefaultFirebaseOptions have not been configured for web - '
-        'you can reconfigure this by running the FlutterFire CLI again.',
-      );
+      return web;
     }
     switch (defaultTargetPlatform) {
       case TargetPlatform.android:
         return android;
       case TargetPlatform.iOS:
-        throw UnsupportedError(
-          'DefaultFirebaseOptions have not been configured for ios - '
-          'you can reconfigure this by running the FlutterFire CLI again.',
-        );
+        return ios;
       case TargetPlatform.macOS:
         throw UnsupportedError(
           'DefaultFirebaseOptions have not been configured for macos - '
@@ -52,11 +46,30 @@ class DefaultFirebaseOptions {
     }
   }
 
+  static const FirebaseOptions web = FirebaseOptions(
+    apiKey: 'AIzaSyBWLR0KKCA8sFwJ73V7vzzMBtgW3OD4_lw',
+    appId: '1:387587913311:web:55e079c5b8e006ef530dea',
+    messagingSenderId: '387587913311',
+    projectId: 'tyamoapp11',
+    authDomain: 'tyamoapp11.firebaseapp.com',
+    storageBucket: 'tyamoapp11.appspot.com',
+    measurementId: 'G-Z4BTZ6XMQ5',
+  );
+
   static const FirebaseOptions android = FirebaseOptions(
     apiKey: 'AIzaSyBqLnkYu1tufU6IPbZ1d_U6nQftp8Vmi18',
     appId: '1:387587913311:android:673e875244719f59530dea',
     messagingSenderId: '387587913311',
     projectId: 'tyamoapp11',
     storageBucket: 'tyamoapp11.appspot.com',
+  );
+
+  static const FirebaseOptions ios = FirebaseOptions(
+    apiKey: 'AIzaSyBq9MQUVt0q30Ea-v70_3qKX0bPQjj-RRI',
+    appId: '1:387587913311:ios:4e39a64073b25db9530dea',
+    messagingSenderId: '387587913311',
+    projectId: 'tyamoapp11',
+    storageBucket: 'tyamoapp11.appspot.com',
+    iosBundleId: 'com.example.tyamo',
   );
 }

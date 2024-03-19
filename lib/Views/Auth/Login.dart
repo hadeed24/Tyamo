@@ -5,6 +5,7 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:page_transition/page_transition.dart';
 import 'package:responsive_sizer/responsive_sizer.dart';
 import 'package:rounded_loading_button/rounded_loading_button.dart';
+import 'package:tyamo/Interfaces/Auth/login_services.dart';
 import 'package:tyamo/Views/Auth/Register.dart';
 import 'package:tyamo/Views/Auth/forgot_password.dart';
 import 'package:tyamo/Views/Invitation/invite_friend.dart';
@@ -17,11 +18,13 @@ class Login extends StatelessWidget {
   final RoundedLoadingButtonController _btnController =
       RoundedLoadingButtonController();
 
+  final LoginSerivces loginservices = LoginSerivces();
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        flexibleSpace:  const Center(child: LogoAppbar_n()),
+        flexibleSpace: const Center(child: LogoAppbar_n()),
         backgroundColor: const Color(0xff000221),
         centerTitle: true,
       ),
@@ -30,18 +33,39 @@ class Login extends StatelessWidget {
           padding: const EdgeInsets.all(30.0),
           child: Column(
             children: [
-              const AuthHeading("Sign In to Tyamo", "To connect with\nyour partner",
-                  "assets/images/icon.png", 18, 18, Color(0xff000221)),
+              const AuthHeading(
+                  "Sign In to Tyamo",
+                  "To connect with\nyour partner",
+                  "assets/images/icon.png",
+                  18,
+                  18,
+                  Color(0xff000221)),
               const SizedBox(
                 height: 50,
               ),
-              const Auth_text_fields(false, Icons.alternate_email, 16, 16,
-                  TextInputType.emailAddress, 16, "Email"),
+              Auth_text_fields(
+                false,
+                Icons.alternate_email,
+                16,
+                16,
+                TextInputType.emailAddress,
+                16,
+                "Email",
+                controller: loginservices.emailController,
+              ),
               const SizedBox(
                 height: 20,
               ),
-              const Auth_text_fields(true, Icons.password, 16, 16,
-                  TextInputType.visiblePassword, 16, "Password"),
+              Auth_text_fields(
+                true,
+                Icons.password,
+                16,
+                16,
+                TextInputType.visiblePassword,
+                16,
+                "Password",
+                controller: loginservices.passwordController,
+              ),
               const SizedBox(
                 height: 30,
               ),

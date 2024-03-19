@@ -5,6 +5,8 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:page_transition/page_transition.dart';
 import 'package:responsive_sizer/responsive_sizer.dart';
 import 'package:rounded_loading_button/rounded_loading_button.dart';
+import 'package:tyamo/Controller/UserController/user_controller.dart';
+import 'package:tyamo/Interfaces/Auth/register_services.dart';
 import 'package:tyamo/Views/Auth/Login.dart';
 import 'package:tyamo/Views/Profile/profile_setup.dart';
 import 'package:tyamo/Widgets/Auth/auth_heading.dart';
@@ -16,14 +18,15 @@ class Register extends StatelessWidget {
   final RoundedLoadingButtonController _btnController =
       RoundedLoadingButtonController();
 
-  void loginbt() {
-  }
+  RegisterSerivces registerSerivces = RegisterSerivces();
+
+  void loginbt() {}
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        flexibleSpace:  const Center(child: LogoAppbar_n()),
+        flexibleSpace: const Center(child: LogoAppbar_n()),
         backgroundColor: const Color(0xff000221),
         centerTitle: true,
       ),
@@ -31,23 +34,52 @@ class Register extends StatelessWidget {
         child: Padding(
           padding: const EdgeInsets.all(30.0),
           child: Column(children: [
-            const AuthHeading("Sign Up to Tyamo", "Get connected with\nyour partner",
-                "assets/images/icon.png", 18, 18, Color(0xff000221)),
+            const AuthHeading(
+                "Sign Up to Tyamo",
+                "Get connected with\nyour partner",
+                "assets/images/icon.png",
+                18,
+                18,
+                Color(0xff000221)),
             const SizedBox(
               height: 50,
             ),
-            const Auth_text_fields(false, Icons.alternate_email, 16, 16,
-                TextInputType.emailAddress, 16, "Email"),
+            Auth_text_fields(
+              false,
+              Icons.alternate_email,
+              16,
+              16,
+              TextInputType.emailAddress,
+              16,
+              "Email",
+              controller: registerSerivces.emailController,
+            ),
             const SizedBox(
               height: 20,
             ),
-            const Auth_text_fields(true, Icons.password, 16, 16,
-                TextInputType.visiblePassword, 16, "Password"),
+            Auth_text_fields(
+              true,
+              Icons.password,
+              16,
+              16,
+              TextInputType.visiblePassword,
+              16,
+              "Password",
+              controller: registerSerivces.passwordController,
+            ),
             const SizedBox(
               height: 30,
             ),
-            const Auth_text_fields(true, Icons.lock_reset, 16, 16,
-                TextInputType.visiblePassword, 16, "Confirm Password"),
+            Auth_text_fields(
+              true,
+              Icons.lock_reset,
+              16,
+              16,
+              TextInputType.visiblePassword,
+              16,
+              "Confirm Password",
+              controller: registerSerivces.confirmPasswordController,
+            ),
             const SizedBox(
               height: 30,
             ),
@@ -59,18 +91,32 @@ class Register extends StatelessWidget {
                 color: const Color(0xff000221),
                 controller: _btnController,
                 onPressed: () async {
-                    Timer(const Duration(seconds: 1), () {
-                      _btnController.success();
+                  print("AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA");
+                  print(registerSerivces.passwordController.text);
+                  print(registerSerivces.confirmPasswordController.text);
+                  print("AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA");
+                  if (registerSerivces.passwordController.text ==
+                      registerSerivces.confirmPasswordController.text) {
+                    print("OOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO");
+                    UserController().userRegister(
+                        registerSerivces.emailController.text,
+                        registerSerivces.passwordController.text);
+                  } else {
+                    print("XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX");
+                  }
 
-                      Navigator.pushReplacement(
-                        context,
-                        PageTransition(
-                          type: PageTransitionType.fade,
-                          child: Profile_setup(),
-                        ),
-                      );
-                    });
-                  },
+                  /* Timer(const Duration(seconds: 1), () {
+                    _btnController.success();
+
+                    Navigator.pushReplacement(
+                      context,
+                      PageTransition(
+                        type: PageTransitionType.fade,
+                        child: Profile_setup(),
+                      ),
+                    );
+                  }); */
+                },
                 child: Text("Register",
                     style: GoogleFonts.poppins(
                         fontWeight: FontWeight.w600,

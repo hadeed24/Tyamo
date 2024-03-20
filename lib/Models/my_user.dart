@@ -1,3 +1,5 @@
+import 'package:cloud_firestore/cloud_firestore.dart';
+
 class MyUser {
   String? uid;
   String? email;
@@ -9,18 +11,18 @@ class MyUser {
   String? chatRoomId;
   String? gender;
   String? phone;
-  DateTime? accCreated;
+  Timestamp? accCreated;
 
-  MyUser(
-  this.uid,
-  this.email,
-  this.password,
-  this.username,
-  this.displayname,
-  this.avatarUrl,
-  this.friendUid,
-  this.chatRoomId,
-  this.gender,
-  this.phone,
-  );
+MyUser({
+    this.uid,
+    this.email,
+    this.password,
+    this.username,
+    this.displayname,
+    this.avatarUrl,
+    this.friendUid,
+    this.chatRoomId,
+    this.gender,
+    this.phone,
+  });
 }

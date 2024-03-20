@@ -55,6 +55,7 @@ dependencies:
   firebase_core: ^2.27.0
   firebase_auth: ^4.17.8
   achievement_view: ^1.0.1
+  cloud_firestore: ^4.15.8
 
 dev_dependencies:
   flutter_test:

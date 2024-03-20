@@ -94,7 +94,6 @@ class Register extends StatelessWidget {
                 onPressed: () async {
                   if (registerSerivces.passwordController.text ==
                       registerSerivces.confirmPasswordController.text) {
-                    print("OOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO");
                     UserController().userRegister(
                         registerSerivces.emailController.text,
                         registerSerivces.passwordController.text);
@@ -102,27 +101,25 @@ class Register extends StatelessWidget {
                         title: "Success",
                         subTitle: "Account have been registered",
                         color: Colors.green,
-                        //content: Widget()
-                        //onTab: _onTabAchievement,
                         icon: const Icon(
                           Icons.insert_emoticon,
                           color: Colors.white,
                         ),
-                        //typeAnimationContent: AnimationTypeAchievement.fadeSlideToUp,
-                        //borderRadius: 5.0,
-                        //color: Colors.blueGrey,
-                        //textStyleTitle: TextStyle(),
-                        //textStyleSubTitle: TextStyle(),
-                        //alignment: Alignment.topCenter,
-                        //duration: Duration(seconds: 3),
-                        //isCircle: false,
+                        duration: const Duration(seconds: 2),
                         listener: (status) {
                           print(status);
-                          //AchievementState.opening
-                          //AchievementState.open
-                          //AchievementState.closing
-                          //AchievementState.closed
                         }).show(context);
+                    Timer(const Duration(seconds: 2), () {
+                      _btnController.success();
+
+                      Navigator.pushReplacement(
+                        context,
+                        PageTransition(
+                          type: PageTransitionType.fade,
+                          child: Profile_setup(),
+                        ),
+                      );
+                    });
                   } else {
                     AchievementView(
                         title: "Error",
@@ -134,24 +131,8 @@ class Register extends StatelessWidget {
                         ),
                         listener: (status) {
                           print(status);
-                          //AchievementState.opening
-                          //AchievementState.open
-                          //AchievementState.closing
-                          //AchievementState.closed
                         }).show(context);
                   }
-
-                  /* Timer(const Duration(seconds: 1), () {
-                    _btnController.success();
-
-                    Navigator.pushReplacement(
-                      context,
-                      PageTransition(
-                        type: PageTransitionType.fade,
-                        child: Profile_setup(),
-                      ),
-                    );
-                  }); */
                 },
                 child: Text("Register",
                     style: GoogleFonts.poppins(

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:responsive_sizer/responsive_sizer.dart';
+import 'package:tyamo/Views/Auth/Login.dart';
 import 'package:tyamo/Views/Auth/Register.dart';
 import 'package:tyamo/Views/features/Album/album_main.dart';
 import 'package:tyamo/Views/features/Album/album_new_post.dart';

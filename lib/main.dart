@@ -26,7 +26,7 @@ class MyApp extends StatelessWidget {
           theme: ThemeData(),
           debugShowCheckedModeBanner: false,
           title: 'Tyamo',
-          home: Register());
+          home: Login());
     });
   }
 }

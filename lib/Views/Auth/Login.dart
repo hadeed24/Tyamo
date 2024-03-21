@@ -5,7 +5,9 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:page_transition/page_transition.dart';
 import 'package:responsive_sizer/responsive_sizer.dart';
 import 'package:rounded_loading_button/rounded_loading_button.dart';
+import 'package:tyamo/Controller/UserController/user_controller.dart';
 import 'package:tyamo/Interfaces/Auth/login_services.dart';
+import 'package:tyamo/Models/my_user.dart';
 import 'package:tyamo/Views/Auth/Register.dart';
 import 'package:tyamo/Views/Auth/forgot_password.dart';
 import 'package:tyamo/Views/Invitation/invite_friend.dart';
@@ -77,7 +79,11 @@ class Login extends StatelessWidget {
                   color: const Color(0xff000221),
                   controller: _btnController,
                   onPressed: () async {
-                    Timer(const Duration(seconds: 1), () {
+                    UserController().userlogin(
+                        loginservices.emailController.text,
+                        loginservices.passwordController.text);
+
+                    /* Timer(const Duration(seconds: 2), () {
                       _btnController.success();
 
                       Navigator.pushReplacement(
@@ -87,7 +93,7 @@ class Login extends StatelessWidget {
                           child: const Invitefriend(),
                         ),
                       );
-                    });
+                    }); */
                   },
                   child: Text("Login",
                       style: GoogleFonts.poppins(
